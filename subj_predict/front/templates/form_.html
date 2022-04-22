@@ -1,0 +1,35 @@
+{% extends "index_.html" %}
+{% block title %}Fill form{% endblock %}
+{% block content %}
+<h3 class = 'text-info text-center'>Модель определяет тему статьи в рамках трёх классов: <br><br><u>экономика, путешествия, спорт</u><br><br></h3>
+<h6 class = 'text-warning text-center'>В одно из полей ниже вставьте либо ссылку на статью с сайта</h6>
+<h5 class = 'text-success text-center'>Lenta.ru</h5>
+<h6 class = 'text-warning text-center'>либо полный текст статьи с любого новостного сайта</h6>
+<br>
+<div class="row d-flex justify-content-center">
+<div class="col-md-6">
+        <form class = 'form-group' action ={{ url_for('predict_form') }} method="POST">
+
+            {{ form.csrf_token }}
+            <div class='form-group py-3'>
+
+                {{ form.link(placeholder = "Ссылка на статью", class='form-control') }}
+
+            </div>
+
+            <div class='form-group py-1'>
+
+                {{ form.text(placeholder="Текст статьи", class="form-control", rows = '10') }}
+
+            </div>
+
+         <div class="text-center">
+         <button type="submit" class="btn-sm btn-success form-control">Определить тему</button>
+         </div>
+
+
+        </div>
+    </form>
+</div>
+</div>
+{% endblock %}
