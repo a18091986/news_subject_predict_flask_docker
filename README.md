@@ -22,13 +22,13 @@ API: flask
 ```
 $ git clone https://github.com/a18091986/news_subject_predict_flask_docker.git
 $ cd news_subject_predict_flask_docker/subj_predict
-$ docker build -t subj_predict .
+$ docker build -t subject_predict .
 ```
 
 ### Запускаем контейнер
 
 ```
-$ docker run -d -p 8180:8180 -p 8181:8181 -v <your_local_path_to_"news_subject_predict_flask_docker/files"_dir>:/app/app/models fimochka/gb_docker_flask_example
+$ docker run -d -p 8180:8180 -p 8181:8181 -v <your_local_path_to_"news_subject_predict_flask_docker/files"_dir>:/app/files subject_predict
 ```
 
 ### Переходим на localhost:8181
